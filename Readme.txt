@@ -1,5 +1,5 @@
 install PyQt5
-//pip install PyQt5
+//pip install pyqt5
 
 install pyinstaller
 //pip install pyinstaller
