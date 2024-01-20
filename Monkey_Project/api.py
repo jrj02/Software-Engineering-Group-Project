@@ -1,25 +1,23 @@
-import requests
+from flask import Flask, jsonify
+
+app = Flask(__name__)
 
 
-class API:
-    @staticmethod
-    def send_post_request(endpoint, data):
-        try:
-            response = requests.post(endpoint, data=data)
-            response.raise_for_status()
-            return response.json()
+@app.route('/home', methods=['GET'])
+def get_home():
+    return jsonify(message="Home page is being shown"), 200
 
-        except requests.exceptions.RequestException as e:
-            print(f"Error in sending POST request: {e}")
-            return None
 
-    @staticmethod
-    def retrieve_get_data(endpoint, data):
-        try:
-            response = requests.get(endpoint, data=data)
-            response.raise_for_status()
-            return response.json()
+@app.route('/video-processing', methods=['GET'])
+def get_video_processing():
+    # subprocess.run(["python", "VideoPlayer.py"])
+    return jsonify(message="video processing page is being shown"), 200
 
-        except requests.exceptions.RequestException as e:
-            print(f"Error in retrieving GET request: {e}")
-            return None
+
+@app.route('/saved-data', methods=['GET'])
+def get_saved_data():
+    # subprocess.run(["python", "python-file-path-to-saved-data"])
+    return jsonify(message="Saved data page is being shown"), 200
+
+
+# wherever is using the api add, if status_code_variable_name == 200 then do, else do.
