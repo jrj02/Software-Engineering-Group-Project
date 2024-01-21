@@ -1,6 +1,10 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
 import subprocess
+from DataPage import DataPage
+
+
+
 
 class HomePage(QWidget):
     def __init__(self):
@@ -42,6 +46,9 @@ class HomePage(QWidget):
 
     def show_saved_data(self):
         print("Showing Saved Data Page")
+        self.data_page = DataPage()
+        self.data_page.show()
+
 
 if __name__ == "__main__":
     app = QApplication([])
