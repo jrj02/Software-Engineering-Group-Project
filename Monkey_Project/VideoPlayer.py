@@ -21,18 +21,15 @@ class Window(QWidget):
 
         self.create_player()
 
-
-    #create the media player
+    # create the media player
     def create_player(self):
 
         self.mediaPlayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)
 
         videowidget = QVideoWidget()
 
-
         self.openbtn = QPushButton('Open Video')
         self.openbtn.clicked.connect(self.open_file)
-
 
         self.playbtn = QPushButton()
         self.playbtn.setEnabled(False)
@@ -43,15 +40,13 @@ class Window(QWidget):
         self.slider.setRange(0, 0)
         self.slider.sliderMoved.connect(self.set_position)
 
-
         hbox = QHBoxLayout()
         hbox.setContentsMargins(0, 0, 0, 0)
 
-        #utility buttons
+        # utility buttons
         hbox.addWidget(self.openbtn)
         hbox.addWidget(self.playbtn)
         hbox.addWidget(self.slider)
-
 
         vbox = QVBoxLayout()
         vbox.addWidget(videowidget)
@@ -65,23 +60,21 @@ class Window(QWidget):
         self.mediaPlayer.stateChanged.connect(self.mediastate_changed)
         self.mediaPlayer.positionChanged.connect(self.position_changed)
         self.mediaPlayer.durationChanged.connect(self.duration_changed)
-        
-        
-    #open video file
+
+    # open video file
     def open_file(self):
         filename, _ = QFileDialog.getOpenFileName(self, "Open Video")
 
         if filename != '':
             self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(filename)))
             self.playbtn.setEnabled(True)
-            
-    #play video
+
+    # play video
     def play_video(self):
         if self.mediaPlayer.state() == QMediaPlayer.PlayingState:
             self.mediaPlayer.pause()
         else:
             self.mediaPlayer.play()
-
 
     def mediastate_changed(self, state):
         if self.mediaPlayer.state() == QMediaPlayer.PlayingState:
@@ -90,24 +83,20 @@ class Window(QWidget):
         else:
             self.playbtn.setIcon(
                 self.style().standardIcon(QStyle.SP_MediaPlay))
-            
 
-    #set the position of the slider
+    # set the position of the slider
     def position_changed(self, position):
         self.slider.setValue(position)
 
-
-    #set the duration of the slider
+    # set the duration of the slider
     def duration_changed(self, duration):
         self.slider.setRange(0, duration)
-
 
     def set_position(self, position):
         self.mediaPlayer.setPosition(position)
 
 
-
-#for the application to run
+# for the application to run
 app = QApplication(sys.argv)
 window = Window()
 window.show()
