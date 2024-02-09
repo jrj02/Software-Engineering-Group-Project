@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import cv2
 
 
-VIDEOS_DIR = os.path.join('.', 'videos')
+VIDEOS_DIR = os.path.join('..', 'videos')
 
 video_path = os.path.join(VIDEOS_DIR, 'DSCF0012.AVI')
 video_path_out = '{}_out.AVI'.format(video_path)
@@ -14,7 +14,7 @@ ret, frame = cap.read()
 H, W, _ = frame.shape
 out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
 
-model_path = os.path.join('.', 'models', 'monkey_detector.pt')
+model_path = os.path.join('..', 'models', 'monkey_detector.pt')
 
 # Load a model
 model = YOLO(model_path)  # load a custom model

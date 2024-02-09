@@ -1,0 +1,7 @@
+path: C:\Users\JJ msi\Desktop\University of Nottingham lectures\Y2 SEM1\SEGP\Code\data
+train: images\train
+val:  images\train
+
+#classes
+names:
+  0: monkey
