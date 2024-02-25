@@ -59,7 +59,7 @@ set PYTHONPATH=c:\git\MegaDetector;c:\git\yolov5
 
 Make sure to have the run_detector.py file in your computer
 
-With this, just inlcude this line into the mambaforge prompt:
+With this, to run the run_detector.py file, just inlcude this line into the mambaforge prompt:
 ------------------------------------------------------------------------------------------------
 python detection\run_detector.py MDV5A --image_file "some_image_file.jpg" --threshold 0.1
 ------------------------------------------------------------------------------------------------
