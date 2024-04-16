@@ -1,0 +1,47 @@
+
+QWidget#scroll_area_widget {
+    background-color: #323b47;
+}
+
+QDialog {
+	background-color: #1e242b;
+}
+
+QLabel {
+	color: #ffffff;
+    background-color: transparent;
+}
+
+QRadioButton {
+    color: #ffffff;
+}
+
+QPushButton#add_button {
+    background-color: #006eff;
+	color: #ffffff;
+}
+
+QPushButton#ok_button {
+    background-color: #ffffff;
+	color: #000000;
+}
+
+QPushButton#cancel_button {
+    background-color: #ffffff;
+	color: #000000;
+}
+
+QPushButton#cancel_button_ {
+    background-color: #ffffff;
+	color: #000000;
+}
+
+QPushButton#okay_button {
+    background-color: #006eff;
+	color: #ffffff;
+}
+
+QPushButton#delete_button {
+    background-color: #323b47;
+}
+
